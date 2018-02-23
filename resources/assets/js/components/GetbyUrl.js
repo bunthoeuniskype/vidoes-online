@@ -40,7 +40,7 @@ export default class GetbyUrl extends Component {
             <div className="row">
                   { this.state.pageOfItems.map((post,index) => {                                 
                                         return (                                        
-                                           <div className="card col-12 col-sm-6 col-md-4 col-lg-3" key={post.id}>
+                                           <div className="card col-12 col-sm-6 col-md-4 col-lg-4" key={post.id}>
                                               <div className="card-wrapper p-3">
                                               <a href={`${baseUrl}/videos_detail/${post.slug}/play`}>
                                                   <div className="card-img">

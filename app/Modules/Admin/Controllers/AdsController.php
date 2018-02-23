@@ -104,6 +104,7 @@ class AdsController extends Controller
         $ads->location = $request->location;
         $ads->image = $request->image;
         $ads->video_id = $youtube->getYouTubeVideoId($request->video_id);
+        $ads->ads_script = $request->ads_script;
         $ads->order = $request->order;
         $ads->status = $request->status;
 

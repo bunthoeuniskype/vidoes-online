@@ -25,7 +25,7 @@ Route::get('sys_logout','Auth\UserController@signout');
 
 Route::group(['middleware' => ['auth']], function() {
 	Route::get('admin/dashboard','DashboardController@index');
-	Route::get('sys_admin','DashboardController@index');
+	Route::get('administrator','DashboardController@index');
 });
 
 

@@ -195,6 +195,7 @@ return [
         App\Providers\LinkPageFacebookServiceProvider::class,        
         App\Providers\CommentFacebookServiceProvider::class,
         App\Providers\AuthorizeSiteProvider::class,
+        App\Providers\AdsFooterServiceProvider::class,
 
 
     ],

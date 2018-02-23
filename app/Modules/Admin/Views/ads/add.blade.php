@@ -52,7 +52,7 @@
           <label for="ads_type">{{ trans('common.ads_type') }}</label>
         </td>
         <td>
-  {!! Form::select('ads_type',[''=>'Select Type','Banner'=>'Banner','Video'=>'Video'],null,array("data-dojo-type"=>"dijit/form/FilteringSelect","id"=>"ads_type", "required"=>"true" )) !!}
+  {!! Form::select('ads_type',[''=>'Select Type','Banner'=>'Banner','Video'=>'Video','Script'=>'Script Ads, Fb....'],null,array("data-dojo-type"=>"dijit/form/FilteringSelect","id"=>"ads_type", "required"=>"true" )) !!}
   </td>
   </tr>
 
@@ -61,9 +61,17 @@
           <label for="location">{{ trans('common.location') }}</label>
         </td>
         <td>
-  {!! Form::select('location',[''=>'Select Location','Header'=>'Header','Body'=>'Body','Side_Left'=>'Side Left','Side_Right'=>'Side Right'],null,array("data-dojo-type"=>"dijit/form/FilteringSelect","id"=>"location", "required"=>"true" )) !!}
+  {!! Form::select('location',[''=>'Select Location','Header'=>'Header','Body'=>'Body','Side_Left'=>'Side Left','Side_Right'=>'Side Right','Bottom'=>'Bottom'],null,array("data-dojo-type"=>"dijit/form/FilteringSelect","id"=>"location", "required"=>"true" )) !!}
   </td>
   </tr>
+  <tr>
+    <td>
+          <label for="video_id">{{ trans('common.adsence') }}</label>
+        </td>
+        <td>
+  {!! Form::text('ads_script',null,array("data-dojo-type"=>"dijit/form/TextBox","id"=>"scriptadsence")) !!}
+  </td>
+</tr>
 
 <tr>
     <td>

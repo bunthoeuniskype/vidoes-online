@@ -115,5 +115,6 @@
     'logo'=>'Logo',
     'history_login'=>'Login History',
     'description_short'=>'Feature',
+    'adsence' => 'Ads',
    ];
 ?>

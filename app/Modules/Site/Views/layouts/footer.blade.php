@@ -3,10 +3,7 @@
     <div class="container">
         <div class="media-container-row content text-white">  
 
-           <div class="col-12 col-md-4 mbr-fonts-style display-7">
-                <h5 class="pb-3" style="padding-left: 38px;font-size: 20px;">
-                    About Us
-                </h5>
+           <div class="col-12 col-md-4 mbr-fonts-style display-7">               
                 <p class="mbr-text"> 
                 <ul style="list-style: none; margin-bottom: 0rem;">  
                  <li>

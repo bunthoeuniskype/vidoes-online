@@ -15,7 +15,7 @@
 @section('content')
 
 <div class="row" style="margin-left: 0px; margin-right: 0px;">
-   <div class="col-12 col-md-6">
+   <div class="col-12 col-md-8">
       <div id='vdo_play'>
           <iframe width="100%" max-width="560" max-height="315" height="315"  src="https://www.youtube.com/embed/{{ $videoplay->video_id }}" frameborder="0" allowfullscreen></iframe>    
       </div>
@@ -24,17 +24,17 @@
       </div>
       @include('Site::inc.rating')
    </div>
-   <div class="col-12 col-md-6"> 
+   <div class="col-12 col-md-4"> 
             <div id='vdo_play_list'>
                 <?php 
                 $videolist = DB::table('video_list')->where(['language_code'=>App::getLocale(),'status'=>1,'post_group_id'=>$post->group_id])->orderBy('order','ASC')->get(); 
                   ?>
-              <ol type="1" style="margin-bottom: 0px; background-color:rgb(238, 238, 238);">
-                 <a href="{{ url('videos_detail/'.$post->slug.'/play') }}"> <li><img height="35px;" src="https://img.youtube.com/vi/{{$post->video_id}}/mqdefault.jpg">  {{$post->title}}</li></a>
+              <ul type="1" style="margin-bottom: 0px; background-color:rgb(238, 238, 238); list-style: none;overflow:hidden;">
+                 <a href="{{ url('videos_detail/'.$post->slug.'/play') }}"> <li><img height="120px;" src="https://img.youtube.com/vi/{{$post->video_id}}/mqdefault.jpg"> <br/> {{$post->title}}</li></a>
                     @foreach($videolist as $vl)
-                      <a href="{{ url('videos_detail/'.$vl->slug.'/plays') }}"> <li><img height="35px;" src="https://img.youtube.com/vi/{{$vl->video_id}}/mqdefault.jpg">  {{$vl->title}}</li></a>
+                      <a href="{{ url('videos_detail/'.$vl->slug.'/plays') }}"> <li><img height="120px;" src="https://img.youtube.com/vi/{{$vl->video_id}}/mqdefault.jpg"> <br/> {{$vl->title}}</li></a>
                     @endforeach
-               </ol>
+               </ul>
             </div>
   </div>
   <div class="col-12">

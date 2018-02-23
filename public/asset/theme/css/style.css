@@ -436,13 +436,33 @@ nav .mbr-section-btn {
 .logo{
   padding-left: 0; margin-left: 0; list-style: none; margin-bottom: 0;
 }
- .logo > li img{
-   padding-right: 5px;
-    height: 37px;
-}   
+.logo > li img {
+    padding-right: 5px;
+    height: 60px;
+}  
 .video-title{
      padding: 7px;
      padding-left: 0px;
     font-size: 15px;
     font-weight: 600;
+}
+.nav-dropdown .link {
+    margin: .667em 1.667em;
+    font-weight: 600;
+    font-size: 15px;
+    padding: 0;
+    transition: color .2s ease-in-out;
+}
+.cid-qwcsDU8Yc0 .navbar {
+    padding: 0rem;
+    background: #f8f8f8;
+    transition: none;
+    min-height: 60px;
+}
+.cid-qwcsDU8Yc0 .navbar-toggleable-sm .navbar-collapse .navbar-nav .nav-item {
+    max-height: 55px;
+    border: 0.1px solid #00b1dd;
+    border-left: 0px;
+    -webkit-align-self: center;
+    align-self: center;
 }

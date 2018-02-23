@@ -12,13 +12,13 @@ Search
 
 @if(count($posts) > 0)
 
-    @foreach($posts->chunk(4) as $post)
+    @foreach($posts->chunk(3) as $post)
        
        <div  class="media-container-row">
 
        @foreach($post as $value)
 
-            <div class="card col-12 col-sm-6 col-md-4 col-lg-3">
+            <div class="card col-12 col-sm-6 col-md-4 col-lg-4">
                 <div class="card-wrapper p-3">
                 <a href="{{url('videos_detail/'.$value->slug.'/play')}}">
                     <div class="card-img">

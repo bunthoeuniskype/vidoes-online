@@ -73,8 +73,8 @@
   'link'=>'តភ្ជាប់',
   'post'=>'បង្ហោះ',
   'customer'=>'អតិថិជន',
-  'category'=>'ប្រភេទ',
-  'sub_category'=>'ក្រុមប្រភេទ',
+  'category'=>'Menu',
+  'sub_category'=>'Sub Menu',
   'message'=>'សារ',
   'phone'=>'លេខទូរស័ព្ទ',
   'username'=>'ឈ្មោះ',
@@ -100,5 +100,6 @@
     'logo'=>'Logo',
     'history_login'=>'ប្រវត្តិ ការប្រើប្រាស់',
     'description_short'=>'លក្ខណៈពិសេស',
-   ];
+    'adsence' => 'Ads',
+  ];
 ?>

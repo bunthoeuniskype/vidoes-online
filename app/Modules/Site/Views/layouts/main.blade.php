@@ -40,14 +40,27 @@
 </div>
 
 <div class="col-lg-10">
-  @include('Site::ads/header')
-  @include('Site::layouts/menu')
-  @yield('content')  
+  <div class="row">
+    <div class="col-md-12">    
+      @include('Site::ads/header')
+      @include('Site::layouts/menu')
+    </div>
+    <div class="col-md-9">
+      @yield('content') 
+    </div>
+     <div class="col-md-3">
+       @include('Site::ads.side_right')
+    </div>    
+  </div> 
+<div class="col-md-12">    
+      @include('Site::ads/footer')     
+</div> 
 </div> <!--end col-lg-8 -->
 
  <div class="col-lg-1">
-     @include('Site::ads.side_right')
+    
  </div>
+
 
  </div><!--end row -->
 
