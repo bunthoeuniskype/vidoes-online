@@ -27,7 +27,7 @@ class PostController extends Controller
      */
     public function index()
     {
-       $post = Post::where('language_code',App::getLocale())->orderBy('id','DESC')->get();         
+       $post = Post::where(['language_code'=>App::getLocale(),'content_type'=>'post'])->orderBy('id','DESC')->get();         
        return view("Admin::post.index",compact('post'));
     }
 

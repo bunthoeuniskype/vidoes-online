@@ -33,13 +33,13 @@ function setNavigation() {
 }
 </script>
 
-<img class="img"  src="{{ url('public/uploads/images/cam-app-logo.png') }}" style=" height: 46px;  margin-top: 8px;  margin-left: 9px; float: left; margin-right: 10px;">
+
 <ul id="menu">
 <li>
           <a href="{{ url('admin/dashboard') }}" title="Home" style="border-left: 1px solid #999;">
                  <i class="fa fa-home" aria-hidden="true" style="padding-bottom: 3px;"></i>
               <br>
-            <b>{{ trans('common.home')}} </b>
+            <b>{{ trans('common.dashboard')}} </b>
            </a>
 </li>
 

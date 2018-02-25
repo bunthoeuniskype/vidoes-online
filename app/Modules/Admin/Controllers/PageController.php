@@ -26,7 +26,7 @@ class PageController extends Controller
     public function index()
     {
        
-       $post = Post::where(['language_code'=>App::getLocale()])->orderBy('id','DESC')->get();         
+       $post = Post::where(['language_code'=>App::getLocale(),'content_type'=>$this->content_type])->orderBy('id','DESC')->get();         
        return view("Admin::page.index",compact('post'));
     }
 
@@ -64,6 +64,7 @@ class PageController extends Controller
        $post->content = $request->description[$key];    
        $post->created_by = Auth::user()->id;
        $post->language_code = $v->code;
+       $post->order =$request->order;
        $post->slug = $slug;
        $post->content_type ='page';
        $post->save();
@@ -131,7 +132,8 @@ class PageController extends Controller
        $post->title = $request->title[$key];     
        $post->content = $request->description[$key];    
        $post->created_by = Auth::user()->id;
-       $post->language_code = $v->language_code;       
+       $post->language_code = $v->language_code;     
+       $post->order =$request->order;  
        $post->updated_by = Auth::user()->id;   
        $post->status = $request->status;  
        $post->save();

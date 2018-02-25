@@ -32,7 +32,7 @@
     <table class="table table-striped table-bordered nowrap table-over" id="category-table">
         <thead>
                <tr>
-             <th width="3%">#</th>
+            <th width="3%">#</th>
             <th width="26%">{{ trans('common.title') }}</th> 
             <th width="65%">{{ trans('common.description') }}</th>          
             <th width="3%">{{ trans('common.status') }}</th>  

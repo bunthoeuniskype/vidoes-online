@@ -11,7 +11,8 @@
                   <span class="mbri-help mbr-iconfont mbr-iconfont-btn"></span>
                    {{ trans('common.contact_us') }}
                   </a>
-                 </li> 
+                </li> 
+                @if($footer->client_register == 1)
                 <li>
                 <a href="{{url('customer/login')}}">
                  <span class="mbri-login mbr-iconfont mbr-iconfont-btn"></span>
@@ -22,12 +23,8 @@
                  <a href="{{url('customer/register')}}">
                  <span class="mbri-user mbr-iconfont mbr-iconfont-btn"></span> {{ trans('common.register') }}</a>
                  </li>
-                  <li>
-                 <a href="{{url('page/policy')}}">
-                 <span class="mbri-lock mbr-iconfont mbr-iconfont-btn"></span> 
-                 {{ trans('Policy') }}
-                 </a>
-                 </li>
+                 @endif
+                 {!! StringHelper::page() !!}
                 </ul>            
               </p>
             </div>
@@ -45,7 +42,7 @@
             <div class="media-container-row mbr-black">
                 <div class="col-sm-6 copyright">
                     <p class="mbr-text mbr-fonts-style display-7">
-                        © Copyright 2017 <a href="{{url('')}}"> {{ $footer->copy_right }}</a> - All Rights Reserved 
+                        © Copyright 2017 - {{date('Y',strtotime(now()))}}  <a href="{{url('')}}"> {{ $footer->copy_right }}</a> - All Rights Reserved 
                     </p>
                 </div>
                 <div class="col-sm-6" style="text-align: right;">

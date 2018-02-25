@@ -59,17 +59,23 @@
       <td>
       {!! Form::textarea('description['.$key.']',null,array("class"=>"form-control","id"=>"description_".$v->code,"style"=>"height:100px;", "placeholder"=>$v->name )) !!}
       </td>
-      </tr>  
-       <tr>    
-    <td class="pull-right" style="border-top:0px;">
-    <button type="reset" class="btn btn-default"> <i class="fa fa-refresh" aria-hidden="true"></i> {{ trans('common.reset') }}</button>      
-          <button type="submit" class="btn btn-primary" id="btnsave"><i class="fa fa-save fa-fw" aria-hidden="true"></i> {{ trans('common.save') }}</button>
-        </td>
-      </tr>
+      </tr>       
     </table>
    </div>
 @endforeach   
-
+  <table class="table">
+    <tr>      
+      <td>
+       {!! Form::text('order',0,array("data-dojo-type"=>"dijit/form/ValidationTextBox","id"=>"order".$v->code, "required"=>"true","placeholder"=>$v->name )) !!}
+      </td>
+      </tr>  
+    <tr>    
+     <td class="pull-right" style="border-top:0px;">
+    <button type="reset" class="btn btn-default"> <i class="fa fa-refresh" aria-hidden="true"></i> {{ trans('common.reset') }}</button>      
+          <button type="submit" class="btn btn-primary" id="btnsave"><i class="fa fa-save fa-fw" aria-hidden="true"></i> {{ trans('common.save') }}</button>
+      </td>
+      </tr>
+  </table>
  </div>
 
 </div>

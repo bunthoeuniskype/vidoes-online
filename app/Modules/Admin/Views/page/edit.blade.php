@@ -38,7 +38,7 @@
 
 <div class="col-xs-12"> 
    
- <ul class="nav nav-tabs">
+<ul class="nav nav-tabs">
 @foreach($post as $key => $v) 
      <li class="{{ $key==0?'active':''}}"><a href="#tab{{$key}}default" data-toggle="tab">{{$v->language->name}}</a></li>   
 @endforeach
@@ -61,6 +61,16 @@
   </td>
   </tr>  
 
+  </table>
+   </div>
+
+ @if($key == 1) 
+ <table class="table">
+ <tr>      
+      <td>
+       {!! Form::text('order',$v->order,array("data-dojo-type"=>"dijit/form/ValidationTextBox","id"=>"order".$v->code, "required"=>"true","placeholder"=>$v->name )) !!}
+      </td>
+ </tr>  
 
  <tr>
  <td class="pull-right">
@@ -79,10 +89,8 @@
           <button type="submit" class="btn btn-primary" id="btnsave"><i class="fa fa-save fa-fw" aria-hidden="true"></i> {{ trans('common.save') }}</button>
         </td>
    </tr>
-
-  </table>
-
-   </div>
+ </table>
+ @endif 
   
 @endforeach   
 

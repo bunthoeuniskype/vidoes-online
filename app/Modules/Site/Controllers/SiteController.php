@@ -46,7 +46,7 @@ class SiteController extends Controller
                 $offset = $res->offset;
             }
             $skip = $limit * $offset;
-            $posts = Post::where(['language_code'=>App::getLocale(),'status'=>1])->take($limit)->skip($skip)->orderBy('group_id','DESC')->get(); 
+            $posts = Post::where(['language_code'=>App::getLocale(),'status'=>1,'content_type'=>'post'])->take($limit)->skip($skip)->orderBy('group_id','DESC')->get(); 
             $countAll = Post::where(['language_code'=>App::getLocale(),'status'=>1])->count();
             return response()->json(['data'=>$posts,'countAll'=>$countAll,'skip'=>$skip]);
    }
@@ -91,6 +91,13 @@ public function ratingPost(Request $request)
    $response = 'Rating is Successfully';
    return response()->json($response);
 }
+
+public function page(Request $request ,$slug)   {
+
+        $page = Post::where(['language_code'=>App::getLocale(),'slug'=>$slug, 'status'=>1])->first();
+        return view("Site::page",compact('page'));
+    }
+
 
  public function videos_detail(Request $request ,$slug)   {
 
@@ -155,9 +162,9 @@ public function getBycategory(Request $request ,$slug)
             $skip = $limit * $offset;
 
      $category = Category::where(['language_code' => App::getLocale(), 'slug' => $slug, 'status'=>1])->first();
-     $posts = Post::where(['language_code'=>App::getLocale(),'status'=>1,'category_group_id'=> $category->group_id])->take($limit)->skip($skip)->orderBy('group_id','DESC')->get();
+     $posts = Post::where(['language_code'=>App::getLocale(),'status'=>1,'category_group_id'=> $category->group_id,'content_type'=>'post'])->take($limit)->skip($skip)->orderBy('group_id','DESC')->get();
     
-     $countAll =  Post::where(['language_code'=>App::getLocale(),'status'=>1,'category_group_id'=> $category->group_id])->count();
+     $countAll =  Post::where(['language_code'=>App::getLocale(),'status'=>1,'category_group_id'=> $category->group_id,'content_type'=>'post'])->count();
     return response()->json(['data'=>$posts,'countAll'=>$countAll,'skip'=>$skip]);
 }
 
@@ -170,11 +177,11 @@ public function getBysubcategory(Request $request ,$slug)
             }
             $skip = $limit * $offset;
 
-    $subcategory = SubCategory::where(['language_code' => App::getLocale(), 'slug' => $slug, 'status'=>1])->first();
+    $subcategory = SubCategory::where(['language_code' => App::getLocale(), 'slug' => $slug,'status'=>1])->first();
 
-    $posts = Post::where(['language_code'=>App::getLocale(),'status'=>1,'sub_category_group_id'=> $subcategory->group_id])->take($limit)->skip($skip)->orderBy('group_id','DESC')->get();
+    $posts = Post::where(['language_code'=>App::getLocale(),'status'=>1,'sub_category_group_id'=> $subcategory->group_id,'content_type'=>'post'])->take($limit)->skip($skip)->orderBy('group_id','DESC')->get();
     
-     $countAll =  Post::where(['language_code'=>App::getLocale(),'status'=>1,'sub_category_group_id'=> $subcategory->group_id])->count();
+     $countAll =  Post::where(['language_code'=>App::getLocale(),'status'=>1,'sub_category_group_id'=> $subcategory->group_id,'content_type'=>'post'])->count();
     return response()->json(['data'=>$posts,'countAll'=>$countAll,'skip'=>$skip]);
 }
 

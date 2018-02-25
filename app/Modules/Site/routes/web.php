@@ -22,6 +22,7 @@ Route::group(['module' => 'Site', 'middleware' => ['web'], 'namespace' => 'App\M
 	Route::get('subcategoryvideomore/{slug}', 'SiteController@subcategoryvideomore');
 	Route::get('search', 'SiteController@search');
 	Route::post('feedback', 'SiteController@feedback');
+	Route::get('page/{slug}', 'SiteController@page');
 
 	Route::get('/customer/register', function()
 	{

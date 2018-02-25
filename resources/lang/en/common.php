@@ -116,5 +116,7 @@
     'history_login'=>'Login History',
     'description_short'=>'Feature',
     'adsence' => 'Ads',
+    'page' => 'Page',
+    'dashboard' =>'Dashboard',
    ];
 ?>
