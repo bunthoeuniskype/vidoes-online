@@ -42,7 +42,7 @@
  @foreach($post as $key => $v) 
      <li class="{{ $key==0?'active':''}}"><a href="#tab{{$key}}default" data-toggle="tab">{{$v->language->name}}</a></li>   
 @endforeach
-<li class=""><a href="#tabauthordefault" data-toggle="tab">Author</a></li>
+<li class=""><a href="#tabauthordefault" data-toggle="tab">{{ trans('common.description') }}</a></li>
 </ul>
   <div class="tab-content">
    

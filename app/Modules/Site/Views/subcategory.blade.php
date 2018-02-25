@@ -9,7 +9,8 @@
 <div class="container-fluid"> 
 <h5 class="subcategory"><span class="mbr-iconfont mbri-video-play"></span> <a href="{{url('subcategory/'.$subcategory->slug)}}">{{$subcategory->name}}</a></h5>  
 
-<div id="get-by-url-app"></div>
+
+<div id="get-by-url-app" style="padding-left:12px;padding-right:12px;"></div>
 
 </div>
 

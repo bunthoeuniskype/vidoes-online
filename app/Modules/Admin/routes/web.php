@@ -18,12 +18,11 @@ Route::group(['module' => 'Admin', 'middleware' => ['web'], 'namespace' => 'App\
     Route::get('admin/linkdownload/{id}/delete', 'LinkDownloadController@delete');
     Route::get('admin/addlinkdownload/{post_group_id}', 'LinkDownloadController@addlinkdownload');
     Route::resource('admin/customer', 'CustomerController');   
-    Route::get('admin/feedback', 'FeedbackController@index');   
-
-    Route::get('admin/feedback/{id}/view', 'FeedbackController@view');
-    
+    Route::get('admin/feedback', 'FeedbackController@index');  
+    Route::get('admin/feedback/{id}/view', 'FeedbackController@view');    
     Route::get('admin/select_sub_category',['uses'=>'SubCategoryController@select_sub_category','as'=>'select_sub_category']);
-
+    Route::resource('admin/page', 'PageController');
+    Route::get('admin/page/{id}/delete', 'PageController@delete');
     });
 
 

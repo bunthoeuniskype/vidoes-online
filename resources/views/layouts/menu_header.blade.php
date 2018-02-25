@@ -67,6 +67,15 @@ function setNavigation() {
            </a>
 </li>
 
+
+<li>
+<a href="{{url('admin/page')}}" title="">
+                 <i class="fa fa-newspaper-o" aria-hidden="true" style="padding-bottom: 3px;"></i>
+              <br>
+            <b>{{ trans('common.page')}} </b>
+           </a>
+</li>
+
 <li>
 <a href="{{url('admin/advertisement')}}" title="">
                  <i class="fa fa-file-image-o" aria-hidden="true" style="padding-bottom: 3px;"></i>

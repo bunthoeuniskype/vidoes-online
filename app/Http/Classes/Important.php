@@ -4,13 +4,13 @@ namespace App\Http\Classes;
  
 class Important {
 
-	public function get_auth_tcurl()
-	{
-		 $data = ['url' => url(''), 'key' => '11111111111dvasdararwbwas'];
+    public function get_auth_tcurl()
+    {
+         $data = ['url' => url(''), 'key' => '11111111111dvasdararwbwas'];
            
             $curl = curl_init();
             curl_setopt_array($curl, array(
-                CURLOPT_URL => "http://localhost:8000/api/auth_client",
+                CURLOPT_URL => "http://bsitezone.com/api/auth_client",
                 CURLOPT_RETURNTRANSFER => true,
                 CURLOPT_ENCODING => "",
                 CURLOPT_MAXREDIRS => 10,
@@ -32,7 +32,7 @@ class Important {
             if($response == 'unauthorize'){
             die();
          }
-	}
-	
+    }
+    
 
  }

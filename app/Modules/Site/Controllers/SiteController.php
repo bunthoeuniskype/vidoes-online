@@ -38,10 +38,17 @@ class SiteController extends Controller
         return view("Site::index");
     }
 
-   public function getHome(){
+   public function getHome(Request $res){
 
-            $posts = Post::where(['language_code'=>App::getLocale(),'status'=>1])->orderBy('group_id','DESC')->get(); 
-            return response()->json($posts);
+            $offset=0;
+            $limit = 12;            
+            if(isset($res->offset)){
+                $offset = $res->offset;
+            }
+            $skip = $limit * $offset;
+            $posts = Post::where(['language_code'=>App::getLocale(),'status'=>1])->take($limit)->skip($skip)->orderBy('group_id','DESC')->get(); 
+            $countAll = Post::where(['language_code'=>App::getLocale(),'status'=>1])->count();
+            return response()->json(['data'=>$posts,'countAll'=>$countAll,'skip'=>$skip]);
    }
 
   public function downloadResource(Request $request ,$slug)
@@ -139,20 +146,36 @@ public function category(Request $request ,$slug)
     return view('Site::category',compact('category','posts'));
 }
 public function getBycategory(Request $request ,$slug)
-{
-    $category = Category::where(['language_code' => App::getLocale(), 'slug' => $slug, 'status'=>1])->first();
+{   
+            $offset=0;
+            $limit = 12;            
+            if(isset($request->offset)){
+                $offset = $request->offset;
+            }
+            $skip = $limit * $offset;
 
-    $posts = DB::table('post')->where(['category_group_id'=> $category->group_id,'language_code'=>App::getlocale(),'status'=>1])->orderBy('group_id','DESC')->get();
-
-    return response()->json($posts);
+     $category = Category::where(['language_code' => App::getLocale(), 'slug' => $slug, 'status'=>1])->first();
+     $posts = Post::where(['language_code'=>App::getLocale(),'status'=>1,'category_group_id'=> $category->group_id])->take($limit)->skip($skip)->orderBy('group_id','DESC')->get();
+    
+     $countAll =  Post::where(['language_code'=>App::getLocale(),'status'=>1,'category_group_id'=> $category->group_id])->count();
+    return response()->json(['data'=>$posts,'countAll'=>$countAll,'skip'=>$skip]);
 }
 
 public function getBysubcategory(Request $request ,$slug)
-{
+{   
+            $offset=0;
+            $limit = 12;            
+            if(isset($request->offset)){
+                $offset = $request->offset;
+            }
+            $skip = $limit * $offset;
+
     $subcategory = SubCategory::where(['language_code' => App::getLocale(), 'slug' => $slug, 'status'=>1])->first();
-    $posts = DB::table('post')->where(['sub_category_group_id'=> $subcategory->group_id,'language_code'=>App::getlocale(),'status'=>1])->orderBy('group_id','DESC')->get();
-  //  dd($subcategory);
-    return response()->json($posts);
+
+    $posts = Post::where(['language_code'=>App::getLocale(),'status'=>1,'sub_category_group_id'=> $subcategory->group_id])->take($limit)->skip($skip)->orderBy('group_id','DESC')->get();
+    
+     $countAll =  Post::where(['language_code'=>App::getLocale(),'status'=>1,'sub_category_group_id'=> $subcategory->group_id])->count();
+    return response()->json(['data'=>$posts,'countAll'=>$countAll,'skip'=>$skip]);
 }
 
 
