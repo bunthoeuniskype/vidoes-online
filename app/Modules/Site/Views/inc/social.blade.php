@@ -2,7 +2,7 @@
                  
  <div class="mbr-social-likes social-likes social-likes_visible social-likes_ready" style="text-align: center;">  
 <div class="row">
-   <div class="col-4 col-lg-4" style="padding:0px; margin: 0px; margin-right: -20px;">
+     <div class="col-4 col-lg-4" style="padding:0px; margin: 0px; margin-right: -20px;">
     
        <div style="margin: 0;padding: 0;"> 
                  <div>
@@ -17,7 +17,7 @@
                         </div>
                  </div>
   </div>
-  <div class="col-4 col-lg-4" style="padding:0px; margin: 0px;">
+ <!--  <div class="col-4 col-lg-4" style="padding:0px; margin: 0px;">
      <div style="margin: 0; padding: 0;"> 
                 <div>
                          <a style="color: #fff;" href="{{$social->link_instagram }}" target="_blank">
@@ -29,7 +29,7 @@
                         </div>
                   </div>
          </div>
-      </div>
+      </div> -->
     <div class="col-4 col-lg-4" style="padding:0px; margin: 0px;">
      <div style="margin: 0; padding: 0;"> 
                <div>
@@ -43,6 +43,10 @@
                 </div>
          </div>
      </div>
+
+    <div class="col-4 col-lg-4" style="padding:0px; margin: 0px; margin-right: -20px;">
+
+   </div>
     
     </div>
    </div>

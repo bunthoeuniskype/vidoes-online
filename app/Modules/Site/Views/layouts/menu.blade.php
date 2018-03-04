@@ -10,8 +10,7 @@
         </button>
 
     
-        <div class="collapse navbar-collapse" id="navbarSupportedContent">  
-          @include('Site::inc.logo')
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">           
          <ul class="navbar-nav nav-dropdown" data-app-modern-menu="true" id="menu"> 
             <li class="nav-item" style="border-left:0.5px solid #82bbb7;">
                       <a class="nav-link link display-4" href="{{url('')}}">
@@ -48,7 +47,12 @@
         @endif
 
         @endforeach  
-           
+             <li class="nav-item">
+                <a  class="nav-link link display-4" href="{{url('category/contact')}}">
+                 <!--  <span class="mbri-help mbr-iconfont mbr-iconfont-btn"></span> -->
+                   {{ trans('common.contact_us') }}
+                </a>
+              </li> 
             </ul>
             <ul class="lang-search">
              <li>

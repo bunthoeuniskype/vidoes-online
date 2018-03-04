@@ -438,7 +438,7 @@ nav .mbr-section-btn {
 }
 .logo > li img {
     padding-right: 5px;
-    height: 60px;
+    height: 118px;
 }  
 .video-title{
      padding: 7px;
@@ -448,9 +448,10 @@ nav .mbr-section-btn {
 }
 .nav-dropdown .link {
     margin: .667em 1.667em;
-    font-weight: 600;
+    font-weight: 500;
     font-size: 15px;
     padding: 0;
+    font-family: Koulen,Arial,Helvetica,sans-serif;
     transition: color .2s ease-in-out;
 }
 .cid-qwcsDU8Yc0 .navbar {
@@ -461,8 +462,33 @@ nav .mbr-section-btn {
 }
 .cid-qwcsDU8Yc0 .navbar-toggleable-sm .navbar-collapse .navbar-nav .nav-item {
     max-height: 55px;
-    border: 0.1px solid #00b1dd;
+    border: 0.1px solid #ea851d;
     border-left: 0px;
     -webkit-align-self: center;
     align-self: center;
+}
+.title-page h3{
+    color: #d2d2d2;
+    font-size: 19px;
+}
+
+.title-page{
+  font-size: 19px;
+  border-bottom: 1px solid lightgray;
+  text-transform: capitalize;
+  font-family: Koulen,Arial,Helvetica,sans-serif;
+  margin-bottom: 17px;
+}
+.footer-lower{
+    border-top: 1px solid lightgray;
+    padding-top: 12px;
+}
+#footer1-j p{
+ color: #ffffff;
+}
+.cid-qwcsE0gn1m {
+    padding-top: 60px;
+    padding-bottom: 0px;
+    background-color: rgba(0, 0, 0, 0.56);
+    color: #ffffff;
 }

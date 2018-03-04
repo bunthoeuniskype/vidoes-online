@@ -6,7 +6,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge"> 
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
-  <link rel="shortcut icon" href="{{ asset('public/uploads/images/icon.jpg') }}" type="image/x-icon">
+  <link rel="shortcut icon" href="{!! asset(StringHelper::setting()->logo) !!}" type="image/x-icon">
   <meta name="csrf-token" content="{{ csrf_token() }}">
 
   <meta name="description" content="Video Tutorial">
@@ -21,11 +21,12 @@
   <link rel="stylesheet" href="{{ asset('public/asset/bootstrap/css/bootstrap-grid.min.css') }}">
   <link rel="stylesheet" href="{{ asset('public/asset/bootstrap/css/bootstrap-reboot.min.css') }}">
   <link rel="stylesheet" href="{{ asset('public/asset/dropdown/css/style.css') }}">
-  <link rel="stylesheet" href="{{ asset('public/asset/socicon/css/styles.css') }}">
-  <link rel="stylesheet" href="{{ asset('public/asset/theme/css/style.css') }}">
+  <link rel="stylesheet" href="{{ asset('public/asset/socicon/css/styles.css') }}">  
   <link rel="stylesheet" href="{{ asset('public/css/app.css') }}">
   <link rel="stylesheet" href="{{ asset('public/asset/mobirise/css/mbr-additional.css') }}" type="text/css">
+  <link rel="stylesheet" href="{{ asset('public/asset/theme/css/style.css') }}">
   <script src="{{ asset('public/asset/web/assets/jquery/jquery.min.js') }}"></script>
+  <link href="https://fonts.googleapis.com/css?family=Koulen" rel="stylesheet">
   
 @yield('style')
 

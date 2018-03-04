@@ -58,15 +58,15 @@
  
         <h5 class="subcategory">{{trans('common.video_related')}}</h5>
 
- <div  class="media-container-row">
-
-<?php $subcpost = DB::table('post')->where(['sub_category_group_id'=> $post->sub_category_group_id, ['sub_category_group_id', '<>', '0'],'language_code'=>App::getlocale(),'status'=>1])->limit(4)->orderBy('group_id','DESC')->get() ?>    
+<!--  <div  class="media-container-row"> -->
+<div class="row">
+<?php $subcpost = DB::table('post')->where(['sub_category_group_id'=> $post->sub_category_group_id, ['sub_category_group_id', '<>', '0'],'language_code'=>App::getlocale(),'status'=>1])->limit(6)->orderBy('group_id','DESC')->get() ?>    
 
       @if(count($subcpost) > 0)
 
        @foreach($subcpost as $value)
 
-           <div class="card col-12 col-sm-6 col-md-4 col-lg-3">
+           <div class="card col-12 col-sm-6 col-md-4 col-lg-4">
                 <div class="card-wrapper p-3">
                 <a href="{{url('videos_detail/'.$value->slug.'/play')}}">
                     <div class="card-img">
@@ -88,9 +88,9 @@
 
          @else
 
-           @foreach(DB::table('post')->where(['category_group_id'=> $post->category_group_id,'language_code'=>App::getlocale(),'status'=>1])->limit(4)->orderBy('group_id','DESC')->get() as $value)
+           @foreach(DB::table('post')->where(['category_group_id'=> $post->category_group_id,'language_code'=>App::getlocale(),'status'=>1])->limit(6)->orderBy('group_id','DESC')->get() as $value)
 
-            <div class="card col-12 col-sm-6 col-md-4 col-lg-3">
+            <div class="card col-12 col-sm-6 col-md-4 col-lg-4">
                   <div class="card-wrapper p-3">
                   <a href="{{url('videos_detail/'.$value->slug.'/play')}}">
                       <div class="card-img">

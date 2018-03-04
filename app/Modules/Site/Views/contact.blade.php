@@ -31,9 +31,9 @@ Contact Us
                      @endif
 
                         <p class="mbr-text align-left mbr-fonts-style display-7">
-                            Phone: {{ $contact->client_phone }} <br>
-                            Email: {{ $contact->client_email }} <br>
-                            Address : {{ $contact->client_address }}
+                            {{trans('common.phone')}} : {{ $contact->client_phone }} <br>
+                            {{trans('common.email')}} : {{ $contact->client_email }} <br>
+                            {{trans('common.address')}} : {{ $contact->client_address }}
                         </p>
                     </div>
                 </div>
