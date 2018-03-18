@@ -101,23 +101,35 @@ public function page(Request $request ,$slug)   {
 
  public function videos_detail(Request $request ,$slug)   {
 
-         $urlShare = $request->url();    
+        $urlShare = $request->url();    
+        $post = Post::where(['language_code'=>App::getLocale(),'slug'=>$slug, 'status'=>1])->first();    
 
-        $post = Post::where(['language_code'=>App::getLocale(),'slug'=>$slug, 'status'=>1])->first();
-        
         $videoplay = Post::where(['language_code'=>App::getLocale(),'slug'=>$slug, 'status'=>1])->first();
 
-        foreach(Post::where('group_id',$post->group_id)->get() as $v){
-            $p = Post::findOrFail($v->id);
-            $p->count_view =  $p->count_view+1;
-            $p->save();
+        $postRelateSubCate = Post::where(['sub_category_group_id'=> $post->sub_category_group_id, ['sub_category_group_id', '<>', '0'],'language_code'=>App::getlocale(),'status'=>1])
+                            ->limit(8)->orderBy('group_id','DESC')
+                            ->get();
+
+        if(count($postRelateSubCate) > 0){
+            $postRelate=$postRelateSubCate;
+        }else{
+            $postRelateCate=Post::where(['category_group_id'=> $post->category_group_id,'language_code'=>App::getlocale(),'status'=>1])
+                            ->limit(8)->orderBy('group_id','DESC')
+                            ->get();
+            $postRelate=$postRelateCate;                
         }
 
-        $subcategory = SubCategory::where(['language_code'=>App::getLocale(), 'group_id'=>$post->sub_category_group_id, 'status'=>1])->first();
 
-         $comment = Comment::where(['status'=>1,'post_group_id'=>$post->group_id])->orderBy('id','DESC')->limit(5)->get();       
-         $post_group_id = $post->group_id;
-        return view("Site::videos_detail",compact('post','comment','post_group_id','urlShare','videoplay'));
+        $videolist = VideoList::where(['language_code'=>App::getLocale(),'status'=>1,'post_group_id'=>$post->group_id])->orderBy('order','ASC')->get(); 
+
+        //count view
+        $countView = Post::where('group_id',$post->group_id); 
+        $countView->update(['count_view' =>  $post->count_view+1]);     
+
+      //    $comment = Comment::where(['status'=>1,'post_group_id'=>$post->group_id])->orderBy('id','DESC')->limit(5)->get();
+
+       $post_group_id = $post->group_id;
+       return view("Site::videos_detail",compact('post','videolist','postRelate','comment','post_group_id','urlShare','videoplay'));
     }
 
     public function videos_details(Request $request ,$slug)   {

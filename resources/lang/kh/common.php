@@ -101,5 +101,6 @@
     'history_login'=>'ប្រវត្តិ ការប្រើប្រាស់',
     'description_short'=>'លក្ខណៈពិសេស',
     'adsence' => 'Ads',
+    'follow_us' => 'ជួបគ្នានៅបណ្តាញសង្គម',   
   ];
 ?>

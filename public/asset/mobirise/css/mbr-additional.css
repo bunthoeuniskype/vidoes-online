@@ -57,6 +57,7 @@ body {
   
    #advertise-right{
     padding:0px 15px;
+    padding-right: 0px;
   }
 
 /* ---- Fluid typography for mobile devices ---- */

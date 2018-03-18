@@ -118,5 +118,6 @@
     'adsence' => 'Ads',
     'page' => 'Page',
     'dashboard' =>'Dashboard',
+    'follow_us' => 'Follow Us',
    ];
 ?>

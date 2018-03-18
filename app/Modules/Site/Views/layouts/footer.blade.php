@@ -38,14 +38,14 @@
 
              <div class="col-12 col-md-4 mbr-fonts-style display-7">
                  <div class="title-page">
-                  <a href="#"><h3> {{trans('Follow us')}} </h3></a>
+                  <a href="#"><h3> {{trans('common.follow_us')}} </h3></a>
                  </div>
                 @include('Site::inc.social')    
             </div>
 
             <div class="col-12 col-md-4 mbr-fonts-style display-7">
              <div class="title-page">
-                 <a href="#"><h3> {{trans('Contact Us')}} </h3></a>
+                 <a href="#"><h3> {{trans('common.contact_us')}} </h3></a>
                </div>               
                             
                <p class="mbr-text align-left mbr-fonts-style display-7">

@@ -35,10 +35,9 @@
 
 
 <div class="row" style="margin-right: 0px; margin-left: 0px;"> <!--end start -->
-
-<div class="col-lg-1">
- @include('Site::ads.side_left') 
-</div>
+  <div class="col-lg-1">
+   @include('Site::ads.side_left') 
+  </div>
 
 <div class="col-lg-10">
   <div class="row">
@@ -53,6 +52,13 @@
        @include('Site::ads.side_right')
     </div>    
   </div> 
+
+ <div class="col-md-12">
+  @if(isset($postRelate))
+    @include('Site::inc/post_relate')
+  @endif
+</div>
+
 <div class="col-md-12">    
       @include('Site::ads/footer')     
 </div> 
